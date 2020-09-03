@@ -1,0 +1,173 @@
+.world{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: dodgerblue;
+}
+.card-con{
+    display: flex;
+    flex-wrap: wrap;
+    width: 20rem;
+    height: 30rem;
+    border: 5px solid black;
+    background: gray;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+    margin-left: -0.2rem;
+    perspective: 5000px;
+}
+.card{
+    position: relative;
+    width: 4.2rem;
+    height: 6.3rem;
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid black;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    transform: scale(1.05);
+    transition: transform 500ms ease-in-out;
+}
+.card.visible .card-back{
+    transform: rotateY(-180deg);
+}
+.card.visible .card-front{
+    transform: rotateY(0);
+}
+.card.matched .card-value{
+    animation: dance 0.8s cubic-bezier(.36,.07,.19,.97);
+}
+@keyframes dance{
+    0%, 100%{
+        transform: translateX(0);
+    }
+    10%, 90%{
+        transform: translateX(-1px);
+    }
+    20%, 80%{
+        transform: translateX(1.5px);
+    }
+    30%, 50%, 70%{
+        transform: translateX(-2px);
+    }
+    40%, 60%{
+        transform: translateX(2px);
+    }
+
+}
+.card-front{
+    background-color: white;
+    transform: rotateY(180deg);
+}
+.card-back{
+    background-color: lightgray;
+}
+
+.ball{
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+}
+.card-value{
+    width: 100%;
+    height: 100%;
+    align-self: flex-start;
+}
+
+.game-con{
+    position: absolute;
+    margin-top: 1.0rem;
+    margin-left: -0.2rem;
+    width: 21.85rem;
+    height: 37.9rem;
+}
+.dogam{
+    position: absolute;
+    background-image: url("../img/dogam.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+
+} 
+.waiting{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: opacity;
+    transition: 250ms linear;   
+}
+.title{
+    position: absolute;
+    font-family: SansTaiNa, sans-serif;
+    font-size: 6rem;
+    text-align: center;
+    color: yellow;
+    z-index: 11;
+    margin-top: -5rem;
+}
+.title.subtitle{
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+.start1{
+    font-size: 2rem;
+    margin-top: 11rem;
+    margin-left: -10rem;
+}
+.start2{
+    font-size: 3rem;
+    margin-top: 12rem;
+    margin-left: 2rem;
+}
+.clear{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: url("../img/red.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: opacity;
+    transition: 250ms linear;  
+    z-index: -10;
+    opacity: 0;
+}
+.clear-text{
+    position: absolute;
+    font-family: SansTaiNa, sans-serif;
+    font-size: 6rem;
+    text-align: center;
+    color: #f44336;
+    z-index: 11;
+    margin-top: -5rem;
+}
+.first{
+    font-size: 5rem;
+    margin-top: 18rem;
+}
+.second{
+    font-size: 2rem;
+    margin-top: -26.5rem;
+}
