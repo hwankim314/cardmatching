@@ -171,3 +171,7 @@
     font-size: 2rem;
     margin-top: -26.5rem;
 }
+@font-face{
+    font-family: SansTaiNa;
+    src: url("../fonts/SanstainaRegular-52e8.ttf");
+}
