@@ -188,3 +188,12 @@
     font-size: 3rem;
     margin-top: 26.5rem;
 }
+.fin{
+    position: absolute;
+    color: lightgoldenrodyellow;
+    margin-top: 42rem;
+}
+a{
+    text-decoration: none;
+    color: lightgoldenrodyellow;
+}
