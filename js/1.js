@@ -1,8 +1,10 @@
-(function(){
+// (function(){
 const card = document.querySelectorAll('.card');
 const start = document.querySelector('.start2');
 const gameWaiting = document.querySelector('.waiting');
 const clear = document.querySelector('.clear');
+const change = document.querySelector('.change');
+const restart = document.querySelector('.third');
 const cardLength = card.length;
 let check = [];
 let progress = false;
@@ -82,6 +84,34 @@ function gameStart(){
     gameWaiting.style.opacity = "0";
     gameWaiting.style.zIndex = "-100";
 }
+function gameRestart(){
+    clear.style.opacity = "0";
+    clear.style.zIndex = "-100";
+    for(i = 0; i < cardLength; i++){
+        card[i].classList.remove('visible');
+    }
+    init();
+    pairs = 0;
+    gameStart();
+}
+function vertwo(){
+    card[0].childNodes[1].childNodes[1].src = "img2/bbi.png"
+    card[1].childNodes[1].childNodes[1].src = "img2/bbi.png"
+    card[2].childNodes[1].childNodes[1].src = "img2/butter.png"
+    card[3].childNodes[1].childNodes[1].src = "img2/butter.png"
+    card[4].childNodes[1].childNodes[1].src = "img2/gora.png"
+    card[5].childNodes[1].childNodes[1].src = "img2/gora.png"
+    card[6].childNodes[1].childNodes[1].src = "img2/lap.png"
+    card[7].childNodes[1].childNodes[1].src = "img2/lap.png"
+    card[8].childNodes[1].childNodes[1].src = "img2/mag.png"
+    card[9].childNodes[1].childNodes[1].src = "img2/mag.png"
+    card[10].childNodes[1].childNodes[1].src = "img2/mang.png"
+    card[11].childNodes[1].childNodes[1].src = "img2/mang.png"
+    card[12].childNodes[1].childNodes[1].src = "img2/phan.png"
+    card[13].childNodes[1].childNodes[1].src = "img2/phan.png"
+    card[14].childNodes[1].childNodes[1].src = "img2/ya.png"
+    card[15].childNodes[1].childNodes[1].src = "img2/ya.png"
+}
 
 start.addEventListener('click', gameStart);
 document.addEventListener('keydown', function(e){
@@ -91,6 +121,9 @@ document.addEventListener('keydown', function(e){
     }
 })
 
+change.addEventListener('click', vertwo);
+restart.addEventListener('click', gameRestart);
 
 
-})();
+
+// })();

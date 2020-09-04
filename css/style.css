@@ -1,3 +1,7 @@
+@font-face{
+    font-family: SansTaiNa;
+    src: url("../fonts/SanstainaRegular-52e8.ttf");
+}
 .world{
     display: flex;
     justify-content: center;
@@ -102,6 +106,15 @@
     border: 3px solid black;
 
 } 
+.change{
+    position: absolute;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-top: 0.6rem;
+    margin-left: 1.2rem;
+    opacity: 0;
+    z-index: 10;
+}
 .waiting{
     position: absolute;
     width: 100%;
@@ -165,13 +178,13 @@
 }
 .first{
     font-size: 5rem;
-    margin-top: 18rem;
+    margin-top: 17.5rem;
 }
 .second{
     font-size: 2rem;
     margin-top: -26.5rem;
 }
-@font-face{
-    font-family: SansTaiNa;
-    src: url("../fonts/SanstainaRegular-52e8.ttf");
+.third{
+    font-size: 3rem;
+    margin-top: 26.5rem;
 }
