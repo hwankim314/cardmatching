@@ -1,4 +1,4 @@
-(function(){
+// (function(){
 const card = document.querySelectorAll('.card');
 const start = document.querySelector('.start2');
 const gameWaiting = document.querySelector('.waiting');
@@ -10,10 +10,11 @@ let check = [];
 let progress = false;
 let cardDiv;
 let cardDiv2;
-let c1;
-let c2;
+var c1;
+var c2;
 let cardVal = [];
 let pairs = 0;
+let version = 1;
 
 for (i = 0; i < cardLength; i++) {
     card[i].addEventListener('click', function(e){
@@ -81,20 +82,45 @@ function gameStart(){
     for(i = 0; i < cardLength; i++){
         card[i].childNodes[1].childNodes[1].src = cardVal[i] ;
     }
+    pairs = 0;
     gameWaiting.style.opacity = "0";
     gameWaiting.style.zIndex = "-100";
+    cardVal = [];
 }
 function gameRestart(){
     clear.style.opacity = "0";
     clear.style.zIndex = "-100";
+    reset();
+    init();
+    verone();
+    gameStart();
+}
+function reset(){
     for(i = 0; i < cardLength; i++){
         card[i].classList.remove('visible');
     }
-    init();
     pairs = 0;
-    gameStart();
+}
+function verone(){
+    card[0].childNodes[1].childNodes[1].src = "img/pika.png"
+    card[1].childNodes[1].childNodes[1].src = "img/pika.png"
+    card[2].childNodes[1].childNodes[1].src = "img/evee.png"
+    card[3].childNodes[1].childNodes[1].src = "img/evee.png"
+    card[4].childNodes[1].childNodes[1].src = "img/fireli.png"
+    card[5].childNodes[1].childNodes[1].src = "img/fireli.png"
+    card[6].childNodes[1].childNodes[1].src = "img/ggobugi.png"
+    card[7].childNodes[1].childNodes[1].src = "img/ggobugi.png"
+    card[8].childNodes[1].childNodes[1].src = "img/isang.png"
+    card[9].childNodes[1].childNodes[1].src = "img/isang.png"
+    card[10].childNodes[1].childNodes[1].src = "img/maril.png"
+    card[11].childNodes[1].childNodes[1].src = "img/maril.png"
+    card[12].childNodes[1].childNodes[1].src = "img/metamon.png"
+    card[13].childNodes[1].childNodes[1].src = "img/metamon.png"
+    card[14].childNodes[1].childNodes[1].src = "img/ying.png"
+    card[15].childNodes[1].childNodes[1].src = "img/ying.png"
 }
 function vertwo(){
+    gameRestart();
     card[0].childNodes[1].childNodes[1].src = "img2/bbi.png"
     card[1].childNodes[1].childNodes[1].src = "img2/bbi.png"
     card[2].childNodes[1].childNodes[1].src = "img2/butter.png"
@@ -111,6 +137,7 @@ function vertwo(){
     card[13].childNodes[1].childNodes[1].src = "img2/phan.png"
     card[14].childNodes[1].childNodes[1].src = "img2/ya.png"
     card[15].childNodes[1].childNodes[1].src = "img2/ya.png"
+    gameStart();
 }
 
 start.addEventListener('click', gameStart);
@@ -126,4 +153,4 @@ restart.addEventListener('click', gameRestart);
 
 
 
-})();
+// })();
