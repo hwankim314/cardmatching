@@ -90,6 +90,7 @@ function gameStart(){
 function gameRestart(){
     clear.style.opacity = "0";
     clear.style.zIndex = "-100";
+    version = 1;
     reset();
     init();
     verone();
@@ -138,6 +139,7 @@ function vertwo(){
     card[14].childNodes[1].childNodes[1].src = "img2/ya.png"
     card[15].childNodes[1].childNodes[1].src = "img2/ya.png"
     gameStart();
+    version = 2;
 }
 
 start.addEventListener('click', gameStart);
@@ -148,7 +150,14 @@ document.addEventListener('keydown', function(e){
     }
 })
 
-change.addEventListener('click', vertwo);
+change.addEventListener('click', function(){
+    if(version === 1){
+        vertwo();
+    } else if (version === 2){
+        gameRestart();
+    }
+});
+
 restart.addEventListener('click', gameRestart);
 
 
