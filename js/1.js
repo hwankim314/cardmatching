@@ -1,4 +1,4 @@
-// (function(){
+(function(){
 const card = document.querySelectorAll('.card');
 const start = document.querySelector('.start2');
 const gameWaiting = document.querySelector('.waiting');
@@ -126,4 +126,4 @@ restart.addEventListener('click', gameRestart);
 
 
 
-// })();
+})();
